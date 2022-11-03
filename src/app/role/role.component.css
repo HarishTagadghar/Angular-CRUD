@@ -1,0 +1,69 @@
+.user-container {
+    margin: 20px 20px 0;
+  }
+  .user-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0 !important;
+  }
+  ::placeholder{
+    color: rgba(0, 0, 0, 0.87);;
+  }
+  
+  .user-icon {
+    margin: -10px 10px 0 0;
+  }
+  .user-heading-text {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 36px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  
+  .user-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.42);
+    padding-bottom: 5px;
+  }
+  
+  p {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .user-name{
+      width: 30%;
+  }
+  
+  .user-address{
+      width: 55%;
+  }
+  select{
+      padding: 2px 70px 2px 2px;
+      font-size: 16px;
+      border: 1px solid gray;
+  }
+  .user-form{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  table {
+      width: 100% !important;
+    }
+    .mat-form-field {
+        font-size: 14px;
+        width: 100%;
+      }

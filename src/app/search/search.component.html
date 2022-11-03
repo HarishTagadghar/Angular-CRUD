@@ -1,0 +1,16 @@
+<div class="search-container">
+  <div class="search-box">
+    <input class="search-input" type="text" placeholder="Search for user" />
+    <button class="search-button">
+      <img class="search-icon" src="../../assets/searchIcon.png" />SEARCH
+    </button>
+  </div>
+
+  <h6>SEARCH RESULTS</h6>
+  <div class="search-results">
+    <div *ngFor="let user of users">
+      <app-user-box (deleteUser)="deleteUser($event)" [user]="user"></app-user-box>
+    </div>
+  
+  </div>
+</div>

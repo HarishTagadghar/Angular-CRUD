@@ -1,0 +1,25 @@
+.navbar{
+   display: flex;
+   justify-content:flex-end;
+   margin-right: 20px;
+    /* width: 80%; */
+}
+.navbar > *:not(:last-child){
+    margin-right: 10px;
+}
+.button{
+    padding: 5px;
+    color:#43B2FC;
+    border: none;
+    background-color: transparent;
+}
+.button:hover{
+    color: white;
+    background-color: #43B2FC;
+    border-radius: 5px;
+}
+.active{
+    color: white;
+    background-color:#43B2FC;
+    border-radius: 5px;
+}

@@ -1,0 +1,72 @@
+.user-container{
+    width: 440px;
+height: 170px;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 4px;
+padding: 15px;
+margin: 20px;
+}
+.user-box{
+    display: flex;
+flex-direction: row;
+align-items: flex-start;
+}
+.user-icon{
+    margin-right: 10px;
+}
+.user-button{
+    background-color: transparent;
+    border: none;
+    color: #3F51B5;
+}
+.user-button:not(:last-child){
+    margin-right: 40px;
+}
+.user-action{
+    margin: 30px 0;
+}
+h6{
+    
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height, or 120% */
+
+letter-spacing: 0.25px;
+
+color: #000000;
+}
+p{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 12px;
+/* identical to box height, or 100% */
+
+letter-spacing: 0.25px;
+
+color: #777777;
+}
+
+h5{
+    /* v-text/subtitle-2 */
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 22px;
+/* identical to box height, or 157% */
+
+letter-spacing: 0.1px;
+
+/* black/0.87 */
+
+color: rgba(0, 0, 0, 0.87);
+
+}
