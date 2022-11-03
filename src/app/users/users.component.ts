@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgForm } from '@angular/forms';
+import {RoleElements} from '../role/role.component'
 
 @Component({
   selector: 'app-users',
@@ -69,7 +70,7 @@ export class UsersComponent implements OnInit, AfterViewInit {
     }
     if (isRole) {
       let role = JSON.parse(isRole);
-      role.map((role: any) => {
+      role.map((role: RoleElements) => {
         this.role.push(role.name);
       });
     }
