@@ -13,7 +13,7 @@
 
         <select name="role"  id="role" ngModel required> 
             <option value="" disabled selected hidden>Select role</option>
-            <option *ngFor="let role of role" value="role">{{role}}</option>
+            <option *ngFor="let role of role" value={{role}}>{{role}}</option>
         </select>
        
          

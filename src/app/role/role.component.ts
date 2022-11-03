@@ -35,8 +35,10 @@ export class RoleComponent implements OnInit {
 
   ngOnInit(): void {
     const isData = localStorage.getItem('role')
-    if (isData == null) {
+    if (!isData) {
       localStorage.setItem('role' , JSON.stringify(this.ELEMENT_DATA))
+      console.log("role");
+      
     }
     this.getRole()
   }

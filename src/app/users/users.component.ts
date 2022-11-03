@@ -1,4 +1,4 @@
-import { Component, OnInit , ViewChild} from '@angular/core';
+import { AfterViewInit, Component, OnInit , ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {NgForm } from '@angular/forms';
@@ -8,7 +8,7 @@ import {NgForm } from '@angular/forms';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit , AfterViewInit {
   @ViewChild('f', { static: false }) userForm: NgForm;
   editmode:boolean = false
   editedItem:any = null
@@ -26,9 +26,20 @@ export class UsersComponent implements OnInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+    const editItem = localStorage.getItem('editItem')
+    if (editItem) {
+      const user = JSON.parse(editItem)
+      this.editmode = true;
+      this.editedItem = user
+     setTimeout(() => {
+      this.userForm.setValue({...user})
+     }, );
+     localStorage.removeItem('editItem')
+    }
+    
   }
  
-  constructor() { }
+  constructor( ) { }
 
 
   ngOnInit(): void {
@@ -43,8 +54,12 @@ export class UsersComponent implements OnInit {
         this.role.push(role.name)
       })
     }
+  
+   
    this.getuser()
   }
+
+  
 
   getuser(){
     const   isData = localStorage.getItem('user')
@@ -86,7 +101,9 @@ export class UsersComponent implements OnInit {
   EditItem(element:any){
     this.editmode = true
     this.editedItem = element
+    console.log(element);
     this.userForm.setValue({
+      
       ...element
     })
     
