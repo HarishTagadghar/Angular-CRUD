@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, NgModule } from '@angular/core';
 import { Subject } from 'rxjs';
 import { NgForm } from '@angular/forms';
+import { PeriodicElement } from '../users/users.component';
 
 @Component({
   selector: 'app-search',
@@ -10,9 +11,9 @@ import { NgForm } from '@angular/forms';
 export class SearchComponent implements OnInit {
   @ViewChild('f', { static: false }) userForm: NgForm ;
 
-  update = new Subject<any>();
-  users:any[]= []
-  searchUser:any[]=[]
+  update = new Subject<PeriodicElement>();
+  users:PeriodicElement[]= []
+  searchUser:PeriodicElement[]=[]
   
   ELEMENT_DATA: UserElement[] = [
     {name:'mark',role:"Admin",dateOfBirth:"2022-11-02" ,address:"bidar" },
@@ -50,11 +51,11 @@ export class SearchComponent implements OnInit {
     }, );
       
   }
-  deleteUser(user:any){
+  deleteUser(user:PeriodicElement){
     const   isData = localStorage.getItem('user')
     if (isData != null) {
     const localData = JSON.parse(isData)
-    const updateduser = localData.filter((element:any) => {
+    const updateduser = localData.filter((element:PeriodicElement) => {
       return element.name != user.name
     })
     localStorage.setItem('user' , JSON.stringify(updateduser))
@@ -62,7 +63,7 @@ export class SearchComponent implements OnInit {
   }
   }
   onSubmit(form:NgForm){
-    const    searchUser = this.users.filter((user:any) => {
+    const    searchUser = this.users.filter((user:PeriodicElement) => {
       return user.name == form.value.name
     })
     if (searchUser.length > 0) {

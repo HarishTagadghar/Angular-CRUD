@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { PeriodicElement } from '../users/users.component';
 
 @Component({
   selector: 'app-user-box',
@@ -8,20 +9,20 @@ import { Router } from '@angular/router';
 })
 export class UserBoxComponent implements OnInit {
 
-  @Input() user:any;
-  @Output() deleteUser = new EventEmitter<any>()
+  @Input() user:PeriodicElement;
+  @Output() deleteUser = new EventEmitter<PeriodicElement>()
   constructor( private router : Router) { }
   
   ngOnInit(): void {
   }
 
 
-Delete(user: any){
+Delete(user: PeriodicElement){
  
   this.deleteUser.emit(user)
 }
 
-editUser(user:any){
+editUser(user:PeriodicElement){
   localStorage.setItem('editItem' , JSON.stringify(user))
   this.router.navigate(['./users'])
 }
